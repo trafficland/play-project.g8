@@ -19,7 +19,7 @@ FULL_COMMAND="nohup \$BASE_DIR/start &"
 
 
 fail_if_proc_is_running(){
-        IS_RUNNING=`pgrep -f \"$PROC"`
+        IS_RUNNING=`pgrep -f "\$PROC"`
   if [ ! -z "\$IS_RUNNING" ];  then
           failure
           echo
