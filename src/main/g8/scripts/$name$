@@ -12,7 +12,7 @@ BASE_DIR="/opt/$name$"
 PROC="$name$"
 USER="$name$"
 prog="$name$"
-$name$_PID="\$BASE_DIR/RUNNING_PID"
+$name;format="cap"$_PID="\$BASE_DIR/RUNNING_PID"
 STDOUT_LOG="logs/stdout.log"
 CONFIG_DIR="\$BASE_DIR/conf"
 FULL_COMMAND="nohup \$BASE_DIR/start &"
@@ -72,7 +72,7 @@ stop()
           kill `pgrep -f "\$PROC"` && success || failure
           RETVAL=\$?
   fi
-        rm -f \$$name$_PID
+        rm -f \$$name;format="cap"$_PID
         echo
         return \$RETVAL
 }
