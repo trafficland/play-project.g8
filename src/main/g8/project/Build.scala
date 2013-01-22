@@ -44,9 +44,9 @@ object ApplicationBuild extends Build {
 
       IO.write(start,
         """#!/usr/bin/env sh
-scriptdir=`dirname $0`
-classpath=""" + libs.map { case (jar, path) => "$scriptdir/" + path }.mkString("\"", ":", "\"") + """
-exec /opt/java $* -cp $classpath """ + customFileName.map(fn => "-Dconfig.file=`dirname $0`/conf/" + fn + " ").getOrElse("-Dconfig.file=`dirname $0`/conf/application.conf ") + """play.core.server.NettyServer `dirname $0`
+scriptdir=`dirname \$0`
+classpath=""" + libs.map { case (jar, path) => "\$scriptdir/" + path }.mkString("\"", ":", "\"") + """
+exec /opt/java \$* -cp \$classpath """ + customFileName.map(fn => "-Dconfig.file=`dirname \$0`/conf/" + fn + " ").getOrElse("-Dconfig.file=`dirname \$0`/conf/application.conf ") + """play.core.server.NettyServer `dirname \$0`
                                                                                                                                                                                 """ /* */ )
       val scripts = Seq(start -> (packageDirectory + "/start"))
 
