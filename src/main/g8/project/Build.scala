@@ -40,7 +40,6 @@ object ApplicationBuild extends Build {
 
 object Dependencies {
   val resolutionRepos = Seq(
-    "TrafficLand Artifactory Server" at "http://build01.tl.com:8081/artifactory/repo"
   )
 
   object V {
@@ -51,7 +50,8 @@ object Dependencies {
 
   val compileDeps = Seq(
     "com.trafficland"         %% "tlcommons"               % V.tlcommons,
-    "org.reactivemongo"       %% "reactivemongo"           % V.reactive
+    "org.reactivemongo"       %% "reactivemongo"           % V.reactive,
+    "com.google.inject"       %  "guice"                   % "3.0",
   )
 
   val testDeps = Seq(
