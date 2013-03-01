@@ -1,1 +1,2 @@
 GET     /admin/version                                      controllers.AdminController.getVersion
+GET     /server-status                                      controllers.AdminController.status

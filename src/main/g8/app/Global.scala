@@ -1,9 +1,21 @@
 import play.api._
 import play.api.mvc._
 import play.api.mvc.Results._
+import com.google.inject.{Guice, Injector}
 
 object Global
   extends GlobalSettings {
+  var injector: Injector = _    
+
+  override def beforeStart(app: Application) {
+    super.beforeStart(app)
+
+    injector = Guice.createInjector(VMCModule)
+  }
+
+  override def getControllerInstance[A](controllerClass: Class[A]) = {
+    injector.getInstance(controllerClass)
+  }
 
   override def onStart(app: Application) {
     Logger info "Application has started"
