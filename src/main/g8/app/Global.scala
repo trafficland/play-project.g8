@@ -10,7 +10,7 @@ object Global
   override def beforeStart(app: Application) {
     super.beforeStart(app)
 
-    injector = Guice.createInjector(VMCModule)
+    injector = Guice.createInjector(ApplicationModule)
   }
 
   override def getControllerInstance[A](controllerClass: Class[A]) = {
