@@ -51,7 +51,7 @@ object Dependencies {
   val compileDeps = Seq(
     "com.trafficland"         %% "tlcommons"               % V.tlcommons,
     "org.reactivemongo"       %% "reactivemongo"           % V.reactive,
-    "com.google.inject"       %  "guice"                   % "3.0",
+    "com.google.inject"       %  "guice"                   % "3.0"
   )
 
   val testDeps = Seq(
